@@ -144,7 +144,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-sm text-muted transition-colors hover:text-accent"
                 >
                   <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  sairamphotography75@gmail.com
+                  sairamphotography73@gmail.com
                 </a>
               </li>
               <li>
@@ -155,7 +155,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-sm leading-relaxed text-muted transition-colors hover:text-accent"
                 >
                   <LocationIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  Prakasam Nagar, Rajahmundry
+                  Jawaharlal Nehru Rd, Rajamahendravaram
                 </a>
               </li>
               <li>

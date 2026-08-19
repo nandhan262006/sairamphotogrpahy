@@ -8,4 +8,4 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_RAW}?text=${encodeURIComponen
 export const INSTAGRAM_URL = "https://www.instagram.com/sairamphotography_rajahmundry";
 export const YOUTUBE_URL = "https://www.youtube.com/@sairamphotographyrajahmund3517";
 export const MAPS_URL = "https://maps.app.goo.gl/pRbQexQCo7ZfCRDQ9";
-export const EMAIL_URL = "mailto:sairamphotography75@gmail.com";
+export const EMAIL_URL = "mailto:sairamphotography73@gmail.com";

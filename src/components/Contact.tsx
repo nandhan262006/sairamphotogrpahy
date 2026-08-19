@@ -12,8 +12,8 @@ import {
 const CONTACT = {
   phone: "+91 98661 09466",
   phoneRaw: "+919866109466",
-  email: "sairamphotography75@gmail.com",
-  address: "Ladies Club, 74-07-06/1, Sambhu Nagar, Prakasam Nagar, Rajahmundry, Andhra Pradesh 533103",
+  email: "sairamphotography73@gmail.com",
+  address: "Jawaharlal Nehru Rd, near APPOLLO PHARMACY, Venkateswara Nagar, Rajamahendravaram, Andhra Pradesh 533103",
   hours: "Daily · Opens 8:30 am",
   area: "Rajamahendravaram & nearby areas",
   maps: MAPS_URL,
@@ -230,8 +230,8 @@ export function Contact() {
                   Visit the Studio
                 </p>
                 <p className="mt-1 text-sm text-muted">
-                  Find us at Prakasam Nagar, near Ladies Club in
-                  Rajahmundry.
+                  Find us at Venkateswara Nagar, near Apollo Pharmacy in
+                  Rajamahendravaram.
                 </p>
               </div>
               <a
