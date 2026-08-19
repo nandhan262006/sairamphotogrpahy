@@ -141,7 +141,7 @@ export function Testimonials() {
         </Reveal>
       </div>
 
-      <div className="marquee-paused mt-12">
+      <div className="mt-12">
         <div className="animate-marquee flex w-max gap-5 px-5">
           {doubled.map((t, i) => (
             <Card key={`${t.name}-${i}`} t={t} />

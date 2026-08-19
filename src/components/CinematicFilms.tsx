@@ -25,7 +25,7 @@ export function CinematicFilms() {
   }, [active]);
 
   return (
-    <section id="cinematics" className="bg-bg py-16 sm:py-24">
+    <section id="cinematics" className="overflow-hidden bg-bg py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-5">
         <Reveal>
           <div className="flex items-end justify-between gap-4">

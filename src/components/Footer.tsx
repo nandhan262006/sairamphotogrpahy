@@ -4,12 +4,14 @@ import {
   PHONE_DISPLAY,
   WHATSAPP_URL,
   INSTAGRAM_URL,
+  YOUTUBE_URL,
   MAPS_URL,
   EMAIL_URL,
 } from "@/lib/site";
 import {
   WhatsAppIcon,
   InstagramIcon,
+  YoutubeIcon,
   PhoneIcon,
   MailIcon,
   LocationIcon,
@@ -71,6 +73,15 @@ export function Footer() {
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-accent hover:bg-accent hover:text-white"
               >
                 <InstagramIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-accent hover:bg-accent hover:text-white"
+              >
+                <YoutubeIcon className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -144,7 +155,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-sm leading-relaxed text-muted transition-colors hover:text-accent"
                 >
                   <LocationIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  Jawaharlal Nehru Rd, Venkateswara Nagar, Rajamahendravaram
+                  Prakasam Nagar, Rajahmundry
                 </a>
               </li>
               <li>

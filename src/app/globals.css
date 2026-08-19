@@ -31,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,7 +39,8 @@ body {
   color: var(--text);
   font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 ::selection {
@@ -82,6 +84,4 @@ body {
   animation: marquee 42s linear infinite;
 }
 
-.marquee-paused:hover .animate-marquee {
-  animation-play-state: paused;
-}
+

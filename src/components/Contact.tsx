@@ -1,10 +1,11 @@
 import { Reveal } from "@/components/Reveal";
-import { WHATSAPP_URL, INSTAGRAM_URL, MAPS_URL } from "@/lib/site";
+import { WHATSAPP_URL, INSTAGRAM_URL, YOUTUBE_URL, MAPS_URL } from "@/lib/site";
 import {
   PhoneIcon,
   MailIcon,
   LocationIcon,
   InstagramIcon,
+  YoutubeIcon,
   ArrowRightIcon,
 } from "@/components/icons";
 
@@ -12,11 +13,12 @@ const CONTACT = {
   phone: "+91 98661 09466",
   phoneRaw: "+919866109466",
   email: "sairamphotography75@gmail.com",
-  address: "Jawaharlal Nehru Rd, near Apollo Pharmacy, Venkateswara Nagar, Rajamahendravaram, Andhra Pradesh 533103",
+  address: "Ladies Club, 74-07-06/1, Sambhu Nagar, Prakasam Nagar, Rajahmundry, Andhra Pradesh 533103",
   hours: "Daily · Opens 8:30 am",
   area: "Rajamahendravaram & nearby areas",
   maps: MAPS_URL,
   instagram: INSTAGRAM_URL,
+  youtube: YOUTUBE_URL,
 };
 
 function Stars() {
@@ -228,8 +230,8 @@ export function Contact() {
                   Visit the Studio
                 </p>
                 <p className="mt-1 text-sm text-muted">
-                  Find us on Jawaharlal Nehru Road, next to Apollo Pharmacy in
-                  Venkateswara Nagar.
+                  Find us at Prakasam Nagar, near Ladies Club in
+                  Rajahmundry.
                 </p>
               </div>
               <a
@@ -244,7 +246,7 @@ export function Contact() {
             </div>
             <iframe
               title="Sairam Photography location map"
-              src="https://www.google.com/maps?q=17.0072412,81.7968288&z=16&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5!2d81.7968288!3d17.0072412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a3f285dc45d5%3A0x140c1228e67ca580!2sSairam%20Photography!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               className="h-[360px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

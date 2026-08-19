@@ -98,7 +98,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="bg-bg py-16 sm:py-24"
+      className="overflow-hidden bg-bg py-16 sm:py-24"
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
     >
@@ -113,7 +113,7 @@ export function Services() {
         </Reveal>
 
         <div
-          className="relative mx-auto mt-14 h-[min(400px,87vw)]"
+          className="relative mx-auto mt-14 h-[min(400px,87vw)] overflow-hidden"
           style={{ perspective: 1400, touchAction: "pan-y" }}
           onPointerDown={(e) => {
             dragX.current = e.clientX;
