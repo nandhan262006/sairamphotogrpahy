@@ -6,10 +6,10 @@ import { Reveal } from "@/components/Reveal";
 import { ArrowRightIcon, CloseIcon, PlayIcon } from "@/components/icons";
 
 const FILMS = [
-  { title: "Wedding Film", src: "/videos/film-1.mp4" },
-  { title: "Portrait Story", src: "/videos/film-2.mp4" },
-  { title: "Event Reel", src: "/videos/film-3.mp4" },
-  { title: "Commercial Spot", src: "/videos/film-4.mp4" },
+  { title: "Wedding Film", src: "/videos/CINEMATICS1.mp4" },
+  { title: "Portrait Story", src: "/videos/CINEMATICS2.mp4" },
+  { title: "Event Reel", src: "/videos/CINEMATICS3.mp4" },
+  { title: "Commercial Spot", src: "/videos/CINEMATICS4.mp4" },
 ];
 
 export function CinematicFilms() {

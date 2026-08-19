@@ -11,7 +11,7 @@ import {
 const CONTACT = {
   phone: "+91 98661 09466",
   phoneRaw: "+919866109466",
-  email: "hello@sairamphotography.in",
+  email: "sairamphotography75@gmail.com",
   address: "Jawaharlal Nehru Rd, near Apollo Pharmacy, Venkateswara Nagar, Rajamahendravaram, Andhra Pradesh 533103",
   hours: "Daily · Opens 8:30 am",
   area: "Rajamahendravaram & nearby areas",
@@ -132,7 +132,7 @@ export function Contact() {
                       rel="noopener noreferrer"
                       className="mt-1 block text-sm font-semibold text-text hover:text-accent"
                     >
-                      @sairamphotography
+                      @sairamphotography_rajahmundry
                     </a>
                   </div>
                 </li>

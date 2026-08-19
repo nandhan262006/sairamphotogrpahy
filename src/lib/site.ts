@@ -5,6 +5,6 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_RAW}?text=${encodeURIComponen
   "Hi Sairam, I'd like to book a photography shoot.",
 )}`;
 
-export const INSTAGRAM_URL = "https://instagram.com/sairamphotography";
+export const INSTAGRAM_URL = "https://www.instagram.com/sairamphotography_rajahmundry";
 export const MAPS_URL = "https://maps.app.goo.gl/RuQSqVRMRFsHdhB79";
-export const EMAIL_URL = "mailto:hello@sairamphotography.in";
+export const EMAIL_URL = "mailto:sairamphotography75@gmail.com";

@@ -9,17 +9,22 @@ export function Photo({
   className = "",
   imgClassName = "",
   priority = false,
+  style,
 }: {
   src: string;
   alt: string;
   className?: string;
   imgClassName?: string;
   priority?: boolean;
+  style?: React.CSSProperties;
 }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden bg-bg-secondary ${className}`}>
+    <div
+      className={`relative overflow-hidden bg-bg-secondary ${className}`}
+      style={style}
+    >
       {failed ? (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-bg-tint via-bg-secondary to-bg-secondary">
           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 text-accent">

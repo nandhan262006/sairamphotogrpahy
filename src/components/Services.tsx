@@ -7,39 +7,67 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
 
 const SERVICE_ITEMS = [
   {
-    category: "Portraits",
-    title: "Portrait Photography",
+    category: "Model",
+    title: "Model Photography",
     description:
-      "Professional portraits that capture your personality and tell your story.",
-    image: "/images/hero.png",
+      "Professional model portfolios that capture your personality and tell your story.",
+    image: "/images/MODEL.jpg",
   },
   {
     category: "Weddings",
     title: "Wedding Photography",
     description:
       "Documenting your special day beautifully, from first look to final dance.",
-    image: "/images/about.png",
+    image: "/images/WEDDING.jpg",
   },
   {
-    category: "Events",
-    title: "Event Photography",
+    category: "Couple",
+    title: "Couple Photography",
     description:
-      "Creative coverage of events, celebrations, and important gatherings.",
-    image: "/images/5f91365b-9b6f-447a-bce3-701e2a4a9509.png",
+      "Romantic couple shoots that celebrate your bond and unique story.",
+    image: "/images/COUPLE.jpg",
   },
   {
-    category: "Commercial",
-    title: "Commercial Photography",
+    category: "Family",
+    title: "Family Photography",
     description:
-      "Polished, professional imagery that elevates your business and brand.",
-    image: "/images/fa75e4ff-1005-4de4-8b9a-2ae041a76ead.png",
+      "Creative family portraits that capture love, connection, and precious moments.",
+    image: "/images/FAMILY.jpg",
   },
   {
-    category: "Fashion",
-    title: "Fashion Photography",
+    category: "Engagement",
+    title: "Engagement Photography",
     description:
-      "Editorial and fashion work that blends style, mood, and story.",
-    image: "/images/911beb5d-450e-4561-9e77-71359b6fde4e.jpeg",
+      "Celebrate your engagement with timeless, heartfelt photos.",
+    image: "/images/ENGAGEMENT.jpg",
+  },
+  {
+    category: "Haldi",
+    title: "Haldi Photography",
+    description:
+      "Capturing the vibrant colors and joy of your haldi ceremony.",
+    image: "/images/HALDI.jpg",
+  },
+  {
+    category: "Kids",
+    title: "Kids Photography",
+    description:
+      "Playful, candid shots that freeze the magic of childhood.",
+    image: "/images/KIDS.jpg",
+  },
+  {
+    category: "Newborn",
+    title: "Newborn Photography",
+    description:
+      "Delicate, tender portraits of your newest little love.",
+    image: "/images/NEWBORN.jpg",
+  },
+  {
+    category: "Pre-Wedding",
+    title: "Pre-Wedding Photography",
+    description:
+      "Beautiful pre-wedding stories that build excitement for your big day.",
+    image: "/images/PREWEDDING.jpg",
   },
 ];
 

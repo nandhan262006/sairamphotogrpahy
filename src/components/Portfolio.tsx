@@ -3,31 +3,18 @@ import { Photo } from "@/components/Photo";
 import { ArrowRightIcon } from "@/components/icons";
 
 const WORK = [
-  {
-    title: "Portraits",
-    src: "/images/hero.png",
-    className: "lg:col-span-2 lg:row-span-2",
-  },
-  {
-    title: "Weddings",
-    src: "/images/about.png",
-    className: "lg:col-span-2",
-  },
-  {
-    title: "Events",
-    src: "/images/5f91365b-9b6f-447a-bce3-701e2a4a9509.png",
-    className: "",
-  },
-  {
-    title: "Commercial",
-    src: "/images/fa75e4ff-1005-4de4-8b9a-2ae041a76ead.png",
-    className: "",
-  },
-  {
-    title: "Fashion",
-    src: "/images/911beb5d-450e-4561-9e77-71359b6fde4e.jpeg",
-    className: "lg:col-span-2",
-  },
+  { title: "Portraits", src: "/images/gallery1.jpg", ratio: 4 / 5 },
+  { title: "Weddings", src: "/images/gallery2.jpg", ratio: 4 / 5 },
+  { title: "Events", src: "/images/gallery3.jpg", ratio: 4 / 5 },
+  { title: "Commercial", src: "/images/gallery4.jpg", ratio: 4 / 5 },
+  { title: "Fashion", src: "/images/gallery5.jpg", ratio: 1440 / 1746 },
+  { title: "Portraits", src: "/images/gallery6.jpg", ratio: 1440 / 1746 },
+  { title: "Weddings", src: "/images/gallery7.jpg", ratio: 4 / 5 },
+  { title: "Events", src: "/images/gallery8.jpg", ratio: 4 / 5 },
+  { title: "Commercial", src: "/images/gallery9.jpg", ratio: 4 / 5 },
+  { title: "Fashion", src: "/images/gallery10.jpg", ratio: 4 / 5 },
+  { title: "Portraits", src: "/images/gallery11.webp", ratio: 4 / 5 },
+  { title: "Weddings", src: "/images/gallery12.jpg", ratio: 4 / 5 },
 ];
 
 export function Portfolio() {
@@ -54,24 +41,25 @@ export function Portfolio() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid auto-rows-[200px] grid-cols-2 gap-3 sm:auto-rows-[240px] lg:grid-cols-4">
+        <div className="mt-10 columns-2 lg:columns-3">
           {WORK.map((w, i) => (
             <Reveal
-              key={w.title}
-              delay={i * 0.04}
-              className={w.className}
+              key={w.src}
+              delay={(i % 3) * 0.04}
+              className="mb-0 break-inside-avoid"
             >
               <a
                 href="#contact"
-                className="group relative block h-full w-full overflow-hidden rounded-xl"
+                className="group relative block overflow-hidden"
               >
                 <Photo
                   src={w.src}
                   alt={`${w.title} photography by Sairam`}
-                  className="absolute inset-0 h-full w-full"
+                  className="w-full"
                   imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  style={{ aspectRatio: `${w.ratio}` }}
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-5 pb-4 pt-14">
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-5 pb-4 pt-14">
                   <p className="text-base font-bold text-white">{w.title}</p>
                 </div>
               </a>
