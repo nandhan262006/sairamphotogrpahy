@@ -8,14 +8,14 @@ const STATS = [
   { value: "AFIP · AFIAP · EFIP", label: "Photographic Distinctions" },
 ];
 
-export function About() {
+export function About({ aboutImage }: { aboutImage?: string }) {
   return (
     <section id="about" className="bg-bg py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-5 md:grid md:grid-cols-2 md:items-center md:gap-14 lg:gap-20">
         <div className="order-2 md:order-1">
           <Reveal>
             <Photo
-              src="/images/about.png"
+              src={aboutImage || "/images/about.png"}
               alt="Sairam behind the lens"
               className="aspect-[4/5] w-full rounded-2xl"
               imgClassName="object-cover object-top"

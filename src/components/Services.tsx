@@ -5,82 +5,25 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
 
-const SERVICE_ITEMS = [
-  {
-    category: "Model",
-    title: "Model Photography",
-    description:
-      "Professional model portfolios that capture your personality and tell your story.",
-    image: "/images/MODEL.jpg",
-  },
-  {
-    category: "Weddings",
-    title: "Wedding Photography",
-    description:
-      "Documenting your special day beautifully, from first look to final dance.",
-    image: "/images/WEDDING.jpg",
-  },
-  {
-    category: "Couple",
-    title: "Couple Photography",
-    description:
-      "Romantic couple shoots that celebrate your bond and unique story.",
-    image: "/images/COUPLE.jpg",
-  },
-  {
-    category: "Family",
-    title: "Family Photography",
-    description:
-      "Creative family portraits that capture love, connection, and precious moments.",
-    image: "/images/FAMILY.jpg",
-  },
-  {
-    category: "Engagement",
-    title: "Engagement Photography",
-    description:
-      "Celebrate your engagement with timeless, heartfelt photos.",
-    image: "/images/ENGAGEMENT.jpg",
-  },
-  {
-    category: "Haldi",
-    title: "Haldi Photography",
-    description:
-      "Capturing the vibrant colors and joy of your haldi ceremony.",
-    image: "/images/HALDI.jpg",
-  },
-  {
-    category: "Kids",
-    title: "Kids Photography",
-    description:
-      "Playful, candid shots that freeze the magic of childhood.",
-    image: "/images/KIDS.jpg",
-  },
-  {
-    category: "Newborn",
-    title: "Newborn Photography",
-    description:
-      "Delicate, tender portraits of your newest little love.",
-    image: "/images/NEWBORN.jpg",
-  },
-  {
-    category: "Pre-Wedding",
-    title: "Pre-Wedding Photography",
-    description:
-      "Beautiful pre-wedding stories that build excitement for your big day.",
-    image: "/images/PREWEDDING.jpg",
-  },
-];
-
 const ROTATE_MS = 5000;
 const CARD_W = "min(300px, 65vw)";
 const CARD_H = "min(400px, 87vw)";
 
-export function Services() {
+export interface ServiceItem {
+  id: number;
+  category: string;
+  title: string;
+  description: string;
+  image_url: string;
+  sort_order: number;
+}
+
+export function Services({ items }: { items: ServiceItem[] }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [dragging, setDragging] = useState(false);
   const dragX = useRef<number | null>(null);
-  const n = SERVICE_ITEMS.length;
+  const n = items.length;
 
   const go = useCallback(
     (i: number) => {
@@ -136,7 +79,7 @@ export function Services() {
           }}
           onPointerLeave={() => setDragging(false)}
         >
-          {SERVICE_ITEMS.map((service, i) => {
+          {items.map((service, i) => {
             const diff = ((i - active) % n + n) % n;
             const offset = diff > n / 2 ? diff - n : diff;
             const abs = Math.abs(offset);
@@ -165,9 +108,9 @@ export function Services() {
                 }`}
               >
                 <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-xl">
-                  {service.image ? (
+                  {service.image_url ? (
                     <Image
-                      src={service.image}
+                      src={service.image_url}
                       alt={service.title}
                       fill
                       sizes="(min-width: 640px) 300px, 65vw"
@@ -206,9 +149,9 @@ export function Services() {
           </button>
 
           <div className="flex items-center gap-3">
-            {SERVICE_ITEMS.map((service, i) => (
+            {items.map((service, i) => (
               <button
-                key={service.title}
+                key={service.id}
                 type="button"
                 onClick={() => go(i)}
                 aria-label={`Go to ${service.title}`}

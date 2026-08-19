@@ -7,24 +7,41 @@ import { CinematicFilms } from "@/components/CinematicFilms";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import {
+  getSettings,
+  getFeaturedPortfolio,
+  getServices,
+  getCinematics,
+  getTestimonials,
+} from "@/lib/data";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const [settings, portfolio, services, cinematics, testimonials] = await Promise.all([
+    getSettings(),
+    getFeaturedPortfolio(),
+    getServices(),
+    getCinematics(),
+    getTestimonials(),
+  ]);
+
   return (
     <>
       <Navbar />
 
       <main>
-        <Hero />
+        <Hero heroImage={settings.hero_image} />
 
-        <About />
+        <About aboutImage={settings.about_image} />
 
-        <Portfolio />
+        <Portfolio items={portfolio} />
 
-        <Services />
+        <Services items={services} />
 
-        <CinematicFilms />
+        <CinematicFilms items={cinematics} />
 
-        <Testimonials />
+        <Testimonials items={testimonials} />
 
         <Contact />
       </main>

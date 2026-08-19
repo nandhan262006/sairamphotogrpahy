@@ -5,14 +5,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { ArrowRightIcon, CloseIcon, PlayIcon } from "@/components/icons";
 
-const FILMS = [
-  { title: "Wedding Film", src: "/videos/CINEMATICS1.mp4" },
-  { title: "Portrait Story", src: "/videos/CINEMATICS2.mp4" },
-  { title: "Event Reel", src: "/videos/CINEMATICS3.mp4" },
-  { title: "Commercial Spot", src: "/videos/CINEMATICS4.mp4" },
-];
+export interface CinematicItem {
+  id: number;
+  title: string;
+  video_url: string;
+  thumbnail_url: string | null;
+  featured: number;
+  sort_order: number;
+}
 
-export function CinematicFilms() {
+export function CinematicFilms({ items }: { items: CinematicItem[] }) {
   const [active, setActive] = useState<number | null>(null);
 
   useEffect(() => {
@@ -48,23 +50,33 @@ export function CinematicFilms() {
         </Reveal>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {FILMS.map((film, i) => (
-            <Reveal key={film.title} delay={i * 0.05}>
+          {items.map((film, i) => (
+            <Reveal key={film.id} delay={i * 0.05}>
               <button
                 type="button"
                 onClick={() => setActive(i)}
                 className="group relative block w-full overflow-hidden rounded-xl bg-black"
                 aria-label={`Play ${film.title}`}
               >
-                <video
-                  className="aspect-video w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
-                  src={film.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
+                {film.thumbnail_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={film.thumbnail_url}
+                    alt={film.title}
+                    className="aspect-video w-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                ) : (
+                  <video
+                    className="aspect-video w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                    src={film.video_url}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    crossOrigin="anonymous"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <span className="absolute bottom-4 left-4 flex items-center gap-3">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white transition-transform duration-300 group-hover:scale-110">
@@ -116,10 +128,11 @@ export function CinematicFilms() {
             <motion.video
               key={active}
               className="max-h-full max-w-full"
-              src={FILMS[active].src}
+              src={items[active].video_url}
               autoPlay
               controls
               playsInline
+              crossOrigin="anonymous"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

@@ -9,7 +9,7 @@ import { WHATSAPP_URL } from "@/lib/site";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-export function Hero() {
+export function Hero({ heroImage }: { heroImage?: string }) {
   const ref = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -30,7 +30,7 @@ export function Hero() {
         <Reveal className="relative order-1 h-[300px] w-full overflow-hidden rounded-3xl sm:h-[400px] lg:order-2 lg:h-[560px]">
           <motion.div className="absolute inset-0" style={{ y: imgY, scale: imgScale }}>
             <Photo
-              src="/images/hero.png"
+              src={heroImage || "/images/hero.png"}
               alt="Sairam holding a professional camera"
               className="h-full w-full"
               imgClassName="object-cover object-center"

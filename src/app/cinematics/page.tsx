@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CinematicFilms } from "@/components/CinematicFilms";
+import { getCinematics } from "@/lib/data";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Cinematic Films — Sairam Photography",
@@ -9,7 +12,9 @@ export const metadata: Metadata = {
     "Watch Sairam's cinematic wedding, portrait, event and commercial films — stories told through motion and sound.",
 };
 
-export default function CinematicsPage() {
+export default async function CinematicsPage() {
+  const films = await getCinematics();
+
   return (
     <>
       <Navbar />
@@ -29,7 +34,7 @@ export default function CinematicsPage() {
           </div>
         </section>
 
-        <CinematicFilms />
+        <CinematicFilms items={films} />
       </main>
       <Footer />
     </>

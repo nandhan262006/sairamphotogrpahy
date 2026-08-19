@@ -5,7 +5,6 @@ import {
   MailIcon,
   LocationIcon,
   InstagramIcon,
-  YoutubeIcon,
   ArrowRightIcon,
 } from "@/components/icons";
 

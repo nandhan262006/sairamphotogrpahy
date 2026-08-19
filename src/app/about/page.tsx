@@ -5,6 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { Photo } from "@/components/Photo";
 import { ArrowRightIcon } from "@/components/icons";
+import { getSettings } from "@/lib/data";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "About Sairam — Story, Achievements & Philosophy",
@@ -66,7 +69,9 @@ const VALUES = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const settings = await getSettings();
+  const aboutImage = settings.about_image;
   return (
     <>
       <Navbar />
@@ -90,7 +95,7 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-[1280px] gap-10 px-5 pb-16 sm:pb-24 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-14">
             <Reveal className="md:sticky md:top-24">
               <Photo
-                src="/images/about.png"
+                src={aboutImage || "/images/about.png"}
                 alt="Sairam behind the lens"
                 className="aspect-[4/5] w-full rounded-2xl"
                 imgClassName="object-cover object-top"

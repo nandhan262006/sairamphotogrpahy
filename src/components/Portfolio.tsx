@@ -2,22 +2,17 @@ import { Reveal } from "@/components/Reveal";
 import { Photo } from "@/components/Photo";
 import { ArrowRightIcon } from "@/components/icons";
 
-const WORK = [
-  { title: "Portraits", src: "/images/gallery1.jpg", ratio: 4 / 5 },
-  { title: "Weddings", src: "/images/gallery2.jpg", ratio: 4 / 5 },
-  { title: "Events", src: "/images/gallery3.jpg", ratio: 4 / 5 },
-  { title: "Commercial", src: "/images/gallery4.jpg", ratio: 4 / 5 },
-  { title: "Fashion", src: "/images/gallery5.jpg", ratio: 1440 / 1746 },
-  { title: "Portraits", src: "/images/gallery6.jpg", ratio: 1440 / 1746 },
-  { title: "Weddings", src: "/images/gallery7.jpg", ratio: 4 / 5 },
-  { title: "Events", src: "/images/gallery8.jpg", ratio: 4 / 5 },
-  { title: "Commercial", src: "/images/gallery9.jpg", ratio: 4 / 5 },
-  { title: "Fashion", src: "/images/gallery10.jpg", ratio: 4 / 5 },
-  { title: "Portraits", src: "/images/gallery11.webp", ratio: 4 / 5 },
-  { title: "Weddings", src: "/images/gallery12.jpg", ratio: 4 / 5 },
-];
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  image_url: string;
+  aspect_ratio: string;
+  featured: number;
+  sort_order: number;
+}
 
-export function Portfolio() {
+export function Portfolio({ items }: { items: PortfolioItem[] }) {
   return (
     <section id="portfolio" className="bg-bg-secondary py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-5">
@@ -42,9 +37,9 @@ export function Portfolio() {
         </Reveal>
 
         <div className="mt-10 columns-2 lg:columns-3">
-          {WORK.map((w, i) => (
+          {items.map((w, i) => (
             <Reveal
-              key={w.src}
+              key={w.id}
               delay={(i % 3) * 0.04}
               className="mb-0 break-inside-avoid"
             >
@@ -53,11 +48,11 @@ export function Portfolio() {
                 className="group relative block overflow-hidden"
               >
                 <Photo
-                  src={w.src}
+                  src={w.image_url}
                   alt={`${w.title} photography by Sairam`}
                   className="w-full"
                   imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-                  style={{ aspectRatio: `${w.ratio}` }}
+                  style={{ aspectRatio: `${w.aspect_ratio}` }}
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-5 pb-4 pt-14">
                   <p className="text-base font-bold text-white">{w.title}</p>
