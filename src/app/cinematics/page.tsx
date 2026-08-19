@@ -7,9 +7,17 @@ import { getCinematics } from "@/lib/data";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Cinematic Films — Sairam Photography",
+  title: "Cinematic Wedding Films | Best Videographer in Rajahmundry",
   description:
-    "Watch Sairam's cinematic wedding, portrait, event and commercial films — stories told through motion and sound.",
+    "Watch cinematic wedding films and highlight reels by Sairam Photography — the best videographer in Rajahmundry. Professional wedding cinematography, event films and commercial video production.",
+  openGraph: {
+    title: "Cinematic Films | Sairam Photography Rajahmundry",
+    description:
+      "Cinematic wedding films, event films and commercial video production by Rajahmundry's award-winning photographer.",
+  },
+  alternates: {
+    canonical: "https://www.sairamphotograph.com/cinematics",
+  },
 };
 
 export default async function CinematicsPage() {

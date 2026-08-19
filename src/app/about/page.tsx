@@ -10,9 +10,18 @@ import { getSettings } from "@/lib/data";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "About Sairam — Story, Achievements & Philosophy",
+  title: "About Sairam — Best Photographer in Rajahmundry | Story & Awards",
   description:
-    "Sairam's journey as a photographer since 1996 — his story, international awards, distinctions, philosophy, and what makes his work different.",
+    "Meet Sairam — the best photographer in Rajahmundry with 48+ international awards, AFIP, AFIAP & EFIP distinctions. 25+ years of professional photography experience since 1996. Wedding, portrait, event and commercial photography.",
+  openGraph: {
+    title: "About Sairam | Best Photographer in Rajahmundry",
+    description:
+      "48+ international awards. AFIP, AFIAP & EFIP distinctions. 25+ years of professional photography in Rajahmundry, Andhra Pradesh.",
+    images: ["/images/about.png"],
+  },
+  alternates: {
+    canonical: "https://www.sairamphotograph.com/about",
+  },
 };
 
 const ACHIEVEMENTS = [

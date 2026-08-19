@@ -9,9 +9,17 @@ import { getGalleryPortfolio } from "@/lib/data";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Gallery — Sairam Photography",
+  title: "Photo Gallery | Best Photography Studio in Rajahmundry",
   description:
-    "Browse the full photo gallery from Sairam Photography — weddings, portraits, events, commercial and fashion shoots.",
+    "Browse the full photo gallery from Sairam Photography — the best photography studio in Rajahmundry. Weddings, portraits, events, commercial and fashion shoots. 48+ international award-winning photography.",
+  openGraph: {
+    title: "Photo Gallery | Sairam Photography Rajahmundry",
+    description:
+      "Weddings, portraits, events, commercial and fashion shoots from Rajahmundry's award-winning photography studio.",
+  },
+  alternates: {
+    canonical: "https://www.sairamphotograph.com/gallery",
+  },
 };
 
 export default async function GalleryPage() {
