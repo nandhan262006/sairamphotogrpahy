@@ -81,8 +81,65 @@ const VALUES = [
 export default async function AboutPage() {
   const settings = await getSettings();
   const aboutImage = settings.about_image;
+
+  const aboutJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.sairamphotograph.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "About Sairam",
+            item: "https://www.sairamphotograph.com/about",
+          },
+        ],
+      },
+      {
+        "@type": "Person",
+        name: "Sairam",
+        jobTitle: "Photographer",
+        description:
+          "Award-winning photographer in Rajahmundry with 48+ international awards and AFIP, AFIAP & EFIP distinctions.",
+        image: "https://www.sairamphotograph.com/images/about.png",
+        worksFor: {
+          "@type": "ProfessionalService",
+          name: "Sairam Photography",
+        },
+        award: [
+          "48+ International Awards",
+          "AFIP · AFIAP · EFIP Photographic Distinctions",
+          "Gold Medal — A.P. State Photography Academy",
+          "Best Photographer — Sakshi TV Awards 2016",
+        ],
+        alumniOf: {
+          "@type": "Organization",
+          name: "A.P. State Photography Academy",
+        },
+        knowsAbout: [
+          "Wedding Photography",
+          "Portrait Photography",
+          "Event Photography",
+          "Commercial Photography",
+          "Cinematic Wedding Films",
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
       <Navbar />
 
       <main>

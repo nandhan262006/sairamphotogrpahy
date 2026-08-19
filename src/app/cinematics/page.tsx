@@ -6,6 +6,8 @@ import { getCinematics } from "@/lib/data";
 
 export const revalidate = 60;
 
+const SITE_URL = "https://www.sairamphotograph.com";
+
 export const metadata: Metadata = {
   title: "Cinematic Wedding Films | Best Videographer in Rajahmundry",
   description:
@@ -16,15 +18,65 @@ export const metadata: Metadata = {
       "Cinematic wedding films, event films and commercial video production by Rajahmundry's award-winning photographer.",
   },
   alternates: {
-    canonical: "https://www.sairamphotograph.com/cinematics",
+    canonical: `${SITE_URL}/cinematics`,
   },
 };
 
 export default async function CinematicsPage() {
   const films = await getCinematics();
 
+  const videoJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Cinematic Films",
+            item: `${SITE_URL}/cinematics`,
+          },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: "Cinematic Films by Sairam Photography",
+        itemListElement: films.map((film, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "VideoObject",
+            name: film.title,
+            description: `${film.title} — cinematic wedding film by Sairam Photography, Rajahmundry.`,
+            thumbnailUrl: film.thumbnail_url
+              ? film.thumbnail_url
+              : `${SITE_URL}/images/hero.png`,
+            contentUrl: film.video_url,
+            embedUrl: film.video_url,
+            uploadDate: new Date().toISOString().slice(0, 10),
+            publisher: {
+              "@type": "Organization",
+              name: "Sairam Photography",
+            },
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+      />
       <Navbar />
       <main>
         <section className="bg-bg pt-[68px]">

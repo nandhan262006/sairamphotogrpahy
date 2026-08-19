@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { QuoteIcon } from "@/components/icons";
+import { QuoteIcon, ArrowRightIcon } from "@/components/icons";
 
 export interface TestimonialItem {
   id: number;
@@ -111,6 +112,16 @@ export function Testimonials({ items: propItems }: { items: TestimonialItem[] })
             <Card key={`${t.name}-${i}`} t={t} />
           ))}
         </div>
+      </div>
+
+      <div className="mx-auto mt-10 flex max-w-[1280px] justify-center px-5">
+        <Link
+          href="/testimonials"
+          className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-accent"
+        >
+          Read All Reviews
+          <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+        </Link>
       </div>
     </section>
   );

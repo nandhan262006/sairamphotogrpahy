@@ -8,6 +8,8 @@ import { getGalleryPortfolio } from "@/lib/data";
 
 export const revalidate = 60;
 
+const SITE_URL = "https://www.sairamphotograph.com";
+
 export const metadata: Metadata = {
   title: "Photo Gallery | Best Photography Studio in Rajahmundry",
   description:
@@ -18,15 +20,48 @@ export const metadata: Metadata = {
       "Weddings, portraits, events, commercial and fashion shoots from Rajahmundry's award-winning photography studio.",
   },
   alternates: {
-    canonical: "https://www.sairamphotograph.com/gallery",
+    canonical: `${SITE_URL}/gallery`,
   },
 };
 
 export default async function GalleryPage() {
   const items = await getGalleryPortfolio();
 
+  const galleryJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Photo Gallery",
+            item: `${SITE_URL}/gallery`,
+          },
+        ],
+      },
+      {
+        "@type": "ImageGallery",
+        name: "Sairam Photography Portfolio",
+        about: "Wedding, portrait, event, commercial and fashion photography in Rajahmundry",
+        image: items.map((w) => ({
+          "@type": "ImageObject",
+          contentUrl: w.image_url,
+          name: w.title,
+          caption: `${w.title} photography by Sairam, Rajahmundry`,
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+      />
       <Navbar />
 
       <main className="bg-bg-secondary">

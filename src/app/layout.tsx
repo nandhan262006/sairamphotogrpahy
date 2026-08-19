@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Sairam Photography" }],
   creator: "Sairam Photography",
   publisher: "Sairam Photography",
+  applicationName: "Sairam Photography",
+  category: "Photography Studio",
   formatDetection: { email: false, telephone: false },
   openGraph: {
     type: "website",
@@ -99,9 +101,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     email: "sairamphotography73@gmail.com",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Rajahmundry",
+      streetAddress: "Jawaharlal Nehru Rd, near Apollo Pharmacy, Venkateswara Nagar",
+      addressLocality: "Rajamahendravaram",
       addressRegion: "Andhra Pradesh",
+      postalCode: "533103",
       addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+919866109466",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["en", "te"],
     },
     geo: {
       "@type": "GeoCoordinates",
@@ -123,6 +134,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       },
     ],
     priceRange: "$$",
+    foundingDate: "1996",
+    founder: {
+      "@type": "Person",
+      name: "Sairam",
+      jobTitle: "Photographer",
+    },
+    award: [
+      "48+ International Awards",
+      "AFIP · AFIAP · EFIP Photographic Distinctions",
+      "Gold Medal — A.P. State Photography Academy",
+      "Best Photographer — Sakshi TV Awards 2016",
+    ],
+    knowsAbout: [
+      "Wedding Photography",
+      "Portrait Photography",
+      "Event Photography",
+      "Commercial Photography",
+      "Cinematic Wedding Films",
+      "Pre-Wedding Photography",
+    ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -132,6 +163,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     sameAs: [
       "https://www.instagram.com/sairamphotography_rajahmundry",
       "https://www.youtube.com/@sairamphotographyrajahmund3517",
+      "https://maps.app.goo.gl/pRbQexQCo7ZfCRDQ9",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -179,11 +211,68 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         },
       ],
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "150",
-      bestRating: "5",
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What photography services does Sairam Photography offer in Rajahmundry?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sairam Photography offers wedding, portrait, family, event, commercial, fashion, kids, newborn, and pre-wedding photography, plus cinematic wedding films and highlight reels.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is Sairam Photography located?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The studio is located on Jawaharlal Nehru Road, near Apollo Pharmacy, Venkateswara Nagar, Rajamahendravaram, Andhra Pradesh 533103.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I book a photography shoot?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Book via WhatsApp at +91 98661 09466 or email sairamphotography73@gmail.com. You can also use the booking form on the website.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much experience does Sairam have as a photographer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sairam has over 25 years of professional experience, beginning in 1996, with 48+ international awards and AFIP, AFIAP, and EFIP photographic distinctions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Sairam Photography cover events outside Rajahmundry?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Sairam Photography serves Rajamahendravaram and nearby areas across Andhra Pradesh.",
+        },
+      },
+    ],
+  };
+
+  const webSiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Sairam Photography",
+    url: SITE_URL,
+    publisher: {
+      "@type": "ProfessionalService",
+      name: "Sairam Photography",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
     },
   };
 
@@ -193,6 +282,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
       </head>
       <body className="min-h-full bg-bg font-sans text-text">

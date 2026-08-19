@@ -1,0 +1,13 @@
+# humans.txt
+
+/* TEAM */
+Photographer: Sairam
+Location: Rajahmundry, Andhra Pradesh, India
+Contact: sairamphotography73@gmail.com
+
+/* SITE */
+Name: Sairam Photography
+Site: https://www.sairamphotograph.com
+Language: English
+Last update: 2026-08-19
+Standards: HTML5, CSS, JavaScript

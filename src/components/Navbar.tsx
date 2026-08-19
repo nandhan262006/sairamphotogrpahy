@@ -10,10 +10,10 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Portfolio", href: "/#portfolio" },
+  { label: "Services", href: "/services" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Services", href: "/#services" },
   { label: "Cinematics", href: "/cinematics" },
-  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Reviews", href: "/testimonials" },
   { label: "Contact", href: "/#contact" },
   { label: "Admin", href: "/admin" },
 ] as const;

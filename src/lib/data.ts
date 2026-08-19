@@ -104,8 +104,40 @@ export async function getCinematics(): Promise<CinematicRow[]> {
   }));
 }
 
+export async function getFeaturedCinematics(): Promise<CinematicRow[]> {
+  const result = await db.execute(
+    "SELECT * FROM cinematics WHERE featured = 1 ORDER BY sort_order ASC, id ASC"
+  );
+  return result.rows.map((row) => ({
+    id: Number(row.id),
+    title: String(row.title),
+    video_url: String(row.video_url),
+    thumbnail_url: row.thumbnail_url ? String(row.thumbnail_url) : null,
+    featured: Number(row.featured),
+    sort_order: Number(row.sort_order),
+  }));
+}
+
 export async function getTestimonials(): Promise<TestimonialRow[]> {
-  const result = await db.execute("SELECT * FROM testimonials ORDER BY sort_order ASC, id ASC");
+  const result = await db.execute(
+    "SELECT * FROM testimonials WHERE featured = 1 ORDER BY sort_order ASC, id ASC"
+  );
+  return result.rows.map((row) => ({
+    id: Number(row.id),
+    name: String(row.name),
+    role: String(row.role),
+    location: row.location ? String(row.location) : null,
+    quote: String(row.quote),
+    avatar_url: row.avatar_url ? String(row.avatar_url) : null,
+    featured: Number(row.featured),
+    sort_order: Number(row.sort_order),
+  }));
+}
+
+export async function getAllTestimonials(): Promise<TestimonialRow[]> {
+  const result = await db.execute(
+    "SELECT * FROM testimonials ORDER BY sort_order ASC, id ASC"
+  );
   return result.rows.map((row) => ({
     id: Number(row.id),
     name: String(row.name),

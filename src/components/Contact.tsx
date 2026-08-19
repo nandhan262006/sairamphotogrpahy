@@ -1,5 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
-import { WHATSAPP_URL, INSTAGRAM_URL, YOUTUBE_URL, MAPS_URL } from "@/lib/site";
+import { PHONE_RAW, INSTAGRAM_URL, YOUTUBE_URL, MAPS_URL } from "@/lib/site";
 import {
   PhoneIcon,
   MailIcon,
@@ -33,6 +36,23 @@ function Stars() {
 }
 
 export function Contact() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
+
+  const waText = [
+    "Hi Sairam, I'd like to book a shoot.",
+    name && `Name: ${name}`,
+    phone && `Phone: ${phone}`,
+    service && `Service: ${service}`,
+    message && `Details: ${message}`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const waHref = `https://wa.me/${PHONE_RAW}?text=${encodeURIComponent(waText)}`;
+
   return (
     <section id="contact" className="bg-bg py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-5">
@@ -63,6 +83,15 @@ export function Contact() {
                 <p className="mt-4 text-sm leading-relaxed text-muted">
                   Wedding photographer in Rajahmundry, Andhra Pradesh
                 </p>
+                <a
+                  href={CONTACT.maps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-accent"
+                >
+                  See on Google
+                  <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
               </div>
             </Reveal>
 
@@ -164,6 +193,8 @@ export function Contact() {
                     required
                     type="text"
                     placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text outline-none transition-colors placeholder:text-muted/60 focus:border-accent"
                   />
                 </label>
@@ -175,6 +206,8 @@ export function Contact() {
                     required
                     type="tel"
                     placeholder="Your phone number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     className="rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text outline-none transition-colors placeholder:text-muted/60 focus:border-accent"
                   />
                 </label>
@@ -184,16 +217,17 @@ export function Contact() {
                   </span>
                   <select
                     className="rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text outline-none transition-colors focus:border-accent"
-                    defaultValue=""
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
                   >
                     <option value="" disabled>
                       Select a service
                     </option>
-                    <option>Wedding Photography</option>
-                    <option>Portrait Photography</option>
-                    <option>Event Photography</option>
-                    <option>Commercial Photography</option>
-                    <option>Cinematic Film</option>
+                    <option value="Wedding Photography">Wedding Photography</option>
+                    <option value="Portrait Photography">Portrait Photography</option>
+                    <option value="Event Photography">Event Photography</option>
+                    <option value="Commercial Photography">Commercial Photography</option>
+                    <option value="Cinematic Film">Cinematic Film</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-1.5 sm:col-span-2">
@@ -203,13 +237,15 @@ export function Contact() {
                   <textarea
                     rows={4}
                     placeholder="Tell me about your shoot..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="resize-none rounded-lg border border-line bg-bg px-4 py-3 text-sm text-text outline-none transition-colors placeholder:text-muted/60 focus:border-accent"
                   />
                 </label>
               </div>
 
               <a
-                href={WHATSAPP_URL}
+                href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group mt-7 inline-flex items-center gap-2.5 bg-accent px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-deep"

@@ -46,13 +46,13 @@ export function Hero({ heroImage }: { heroImage?: string }) {
 
           <Reveal delay={0.1}>
             <p className="mt-5 text-xs font-bold uppercase tracking-[0.3em] text-accent">
-              Sairam · Storytelling Photography
+              Sairam Photography · Rajahmundry, Andhra Pradesh
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
             <h1 className="mt-3 text-[clamp(2.75rem,10vw,5.5rem)] font-extrabold uppercase leading-[0.92] tracking-tight text-text">
-              Every moment,
+              Rajahmundry&rsquo;s
               <svg
                 className="ml-3 inline-block h-[0.7em] w-[0.7em] align-baseline text-accent"
                 viewBox="0 0 24 24"
@@ -66,18 +66,25 @@ export function Hero({ heroImage }: { heroImage?: string }) {
                 <path d="M12 5l1.4 5.6L19 12l-5.6 1.4L12 19l-1.4-5.6L5 12l5.6-1.4L12 5Z" fill="currentColor" stroke="none" />
               </svg>
               <br />
-              <span className="text-outline">kept forever.</span>
+              <span className="text-outline">Best Photographer</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              Honest, artful photography that freezes your most human moments —
-              so you can feel them again, years from now.
+            <p className="mt-6 font-serif text-xl italic text-text sm:text-2xl">
+              Every moment, kept forever.
             </p>
           </Reveal>
 
-          <Reveal delay={0.25} className="mt-9 flex flex-wrap items-center gap-5">
+          <Reveal delay={0.25}>
+            <p className="mt-4 max-w-md text-pretty text-base leading-relaxed text-muted sm:text-lg">
+              Honest, artful wedding, portrait, event and commercial photography
+              in Rajahmundry — so you can feel your moments again, years from
+              now.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.3} className="mt-9 flex flex-wrap items-center gap-5">
             <a
               href="#portfolio"
               className="group inline-flex items-center gap-2.5 bg-accent px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-deep"

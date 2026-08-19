@@ -11,7 +11,7 @@ import {
   getSettings,
   getFeaturedPortfolio,
   getServices,
-  getCinematics,
+  getFeaturedCinematics,
   getTestimonials,
 } from "@/lib/data";
 
@@ -22,7 +22,7 @@ export default async function Home() {
     getSettings(),
     getFeaturedPortfolio(),
     getServices(),
-    getCinematics(),
+    getFeaturedCinematics(),
     getTestimonials(),
   ]);
 
