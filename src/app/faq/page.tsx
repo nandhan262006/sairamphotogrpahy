@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "FAQ | Sairam Photography — Best Photographer in Rajahmundry",
     description:
       "Answers about photography pricing, packages, availability and booking at Sairam Photography, Rajahmundry's most awarded studio.",
-    images: ["/images/about.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: `${SITE_URL}/faq`,

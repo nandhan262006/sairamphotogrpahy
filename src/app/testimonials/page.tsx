@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Client Reviews | Sairam Photography Rajahmundry",
     description:
       "Real reviews from wedding, portrait, event and commercial photography clients across Rajahmundry and Andhra Pradesh.",
-    images: ["/images/about.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: `${SITE_URL}/testimonials`,
@@ -47,7 +47,7 @@ export default async function TestimonialsPage() {
     "@type": "ProfessionalService",
     name: "Sairam Photography",
     url: SITE_URL,
-    image: `${SITE_URL}/images/about.png`,
+    image: `${SITE_URL}/images/og-image.png`,
     telephone: "+919866109466",
     address: {
       "@type": "PostalAddress",

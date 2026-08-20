@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Award-winning photography studio in Rajahmundry. Wedding, portrait, event, commercial and cinematic photography since 1996. 48+ international awards.",
     images: [
       {
-        url: "/images/about.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sairam Photography — Best Photographer in Rajahmundry",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Sairam Photography | Best Photographer in Rajahmundry",
     description:
       "Award-winning photography studio in Rajahmundry. Wedding, portrait, event, commercial and cinematic photography since 1996.",
-    images: ["/images/about.png"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     alternateName: "Sairam Photography Rajahmundry",
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
-    image: `${SITE_URL}/images/about.png`,
+    image: `${SITE_URL}/images/og-image.png`,
     description:
       "Best photography studio in Rajahmundry. Wedding, portrait, event, commercial and cinematic photography since 1996. 48+ international awards.",
     telephone: "+919866109466",

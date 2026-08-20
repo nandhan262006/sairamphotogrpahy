@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Photography Services in Rajahmundry | Sairam Photography",
     description:
       "Wedding, portrait, event, commercial and cinematic photography services by Rajahmundry's most awarded photographer. 48+ international awards.",
-    images: ["/images/about.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: `${SITE_URL}/services`,

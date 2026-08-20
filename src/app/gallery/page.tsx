@@ -99,7 +99,7 @@ export default async function GalleryPage() {
                     delay={(i % 3) * 0.04}
                     className="mb-4 break-inside-avoid"
                   >
-                    <Link href="/#contact" className="group relative block overflow-hidden rounded-xl">
+                    <Link href="/#portfolio" className="group relative block overflow-hidden rounded-xl">
                       <Photo
                         src={w.image_url}
                         alt={`${w.title} photography by Sairam`}

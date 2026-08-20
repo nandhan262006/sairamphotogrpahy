@@ -27,7 +27,7 @@ export function Portfolio({ items }: { items: PortfolioItem[] }) {
               </h2>
             </div>
             <a
-              href="#contact"
+              href="/gallery"
               className="group mb-1 hidden shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-accent sm:inline-flex"
             >
               View All Work
@@ -44,7 +44,7 @@ export function Portfolio({ items }: { items: PortfolioItem[] }) {
               className="mb-0 break-inside-avoid"
             >
               <a
-                href="#contact"
+                href="/gallery"
                 className="group relative block overflow-hidden"
               >
                 <Photo
@@ -64,7 +64,7 @@ export function Portfolio({ items }: { items: PortfolioItem[] }) {
 
         <Reveal className="mt-8 flex sm:hidden">
           <a
-            href="#contact"
+            href="/gallery"
             className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-accent"
           >
             View All Work

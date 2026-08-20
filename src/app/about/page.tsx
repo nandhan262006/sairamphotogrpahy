@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "About Sairam | Best Photographer in Rajahmundry",
     description:
       "48+ international awards. AFIP, AFIAP & EFIP distinctions. 25+ years of professional photography in Rajahmundry, Andhra Pradesh.",
-    images: ["/images/about.png"],
+    images: ["/images/og-image.png"],
   },
   alternates: {
     canonical: "https://www.sairamphotograph.com/about",
@@ -108,7 +108,7 @@ export default async function AboutPage() {
         jobTitle: "Photographer",
         description:
           "Award-winning photographer in Rajahmundry with 48+ international awards and AFIP, AFIAP & EFIP distinctions.",
-        image: "https://www.sairamphotograph.com/images/about.png",
+        image: "https://www.sairamphotograph.com/images/og-image.png",
         worksFor: {
           "@type": "ProfessionalService",
           name: "Sairam Photography",

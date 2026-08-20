@@ -67,7 +67,7 @@ export async function getFeaturedPortfolio(): Promise<PortfolioRow[]> {
 
 export async function getGalleryPortfolio(): Promise<PortfolioRow[]> {
   const result = await db.execute(
-    "SELECT * FROM portfolio WHERE featured = 0 ORDER BY sort_order ASC, id ASC"
+    "SELECT * FROM portfolio ORDER BY sort_order ASC, id ASC"
   );
   return result.rows.map((row) => ({
     id: Number(row.id),
